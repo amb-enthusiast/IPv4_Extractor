@@ -9,16 +9,19 @@ if(argv.serverPort) serverPort = argv.serverPort;
 
 start(serverPort)
 
+
 function start(port) {
 
   var app = express();
 
   app.use(bodyParser.json()); // for parsing application/json
 
-  app.post('/ip4', api.getIP4s);
+  app.post("/ip4", api.getIP4s);
+
+  app.get("/metadata" , api.getMetadata)
     
   app.listen(port);
 
-  console.log('Listening on port ' + port);
+  console.log("Listening on port " + port);
 
 }

@@ -9,6 +9,12 @@ var app = express();
 // Configure the app
 
 
+function getMetadata(req, res) {
+
+    res.send( { "name" : pjson.name , "version" : pjson.version } );
+
+}
+
 function getIP4s(req, res) {
 
     var body = req.body;
@@ -33,7 +39,7 @@ function getIP4s(req, res) {
         
         //ip4 = IP4_REGEX.match(text);
 
-        res.send({ "ip4Addresses" : ip4 , "serviceID" : serviceID });
+        res.send({ "ip4Addresses" : ip4 , "serviceID" : serviceID , "thanksForRegexTo" : "https://github.com/dstl/baleen" });
 
     } else {
 
@@ -44,3 +50,4 @@ function getIP4s(req, res) {
 }
 
 module.exports.getIP4s=getIP4s
+module.exports.getMetadata=getMetadata

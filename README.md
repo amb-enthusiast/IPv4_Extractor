@@ -3,7 +3,7 @@ IPv4_Extractor
 
 This express.js app provides a simple REST endpoint to extract IPv4 values from text using regular expression (regex) matching.
 
-Bring it to life using <path to app>$ node server.js serverPort=3000
+Bring it to life using <path to app>$ node server.js --serverPort=3000
 
 API Guide
 =========
@@ -49,3 +49,18 @@ The project uses two node files: api_ip4.js and server.js:
  
 The testData folder contains simple test data, and a bash script to use curl to post the data at the ip4 endpoint.
 <path to app>/testData$ ./testPost.sh ip2.json
+
+Dockerisation
+=============
+What better than containerising the app and building a Docker image, and exporting it to a tar?
+
+The Dockerfile pulls from the offical node image, creates a directory for the app, copies the app to that directory and then runs the .
+To build the image, I used:
+    <path to app>$ docker build -t docker-node-ipv4_extractor .
+
+If you want to specify a port different from the 3000 default, use:
+    <path to app>$ docker build --build-arg inputPort=1234 -t node-ipv4_extractor Dockerfile
+
+To run the image, I used:
+    docker run -p 3003:8080 -d node-ipv4_extractor
+
