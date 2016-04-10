@@ -21,7 +21,17 @@ The metadata endpoint accepts a GET request and returns a JSON description of th
 /ip4
 -----
 
-The ip4 endpoint accepts JSON where text content is provided in the text field: { text : "Text to be processed goes here" } in a POST request.  Regex is run to extract IPv4 values, and results returned as JSON in the following format:
+The hostname:portNumber/ip4 endpoint accepts JSON where text content is provided in the text field:
+```json
+  {
+    "someKey" : "someValue" ,
+    text : "Text content that you want to be processed goes here" ,
+    "someOtherKey" : "someOtherValue"
+  }
+```
+in a POST request to the hostname:portNumber/ip4 URL.  N.B. only the text field is used by the app.
+
+The app runs regex to extract IPv4 values, and results returned as JSON in the following format:
 ```json
   {
     "ip4Addresses" : [ "ip1" , ... , "ip_n" ] ,
