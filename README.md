@@ -62,7 +62,7 @@ To build the image, I used:
 ```
 If you want to specify a port different from the 3000 default, use:
 ```shell 
-    <path to app>$ docker build --build-arg inputPort=1234 -t node-ipv4_extractor Dockerfile
+    <path to app>$ docker build --build-arg inputPort=1234 -t node-ipv4_extractor .
 ```
 
 To run the image, I used:
