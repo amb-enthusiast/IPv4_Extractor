@@ -58,15 +58,11 @@ What better than containerising the app and building a Docker image, and exporti
 The Dockerfile pulls from the offical node image, creates a directory for the app, copies the app to that directory and then runs the .
 To build the image, I used:
 ```shell
-    <path to app>$ docker build -t docker-node-ipv4_extractor .
-```
-If you want to specify a port different, say 1234, use:
-```shell 
-    <path to app>$ docker build --build-arg inputPort=1234 -t node-ipv4_extractor .
+    <path to app>$ docker build -t node-ipv4_extractor .
 ```
 
 To run the image, I used:
 ```shell
-    docker run -p 3003:8080 -d node-ipv4_extractor
+    docker run -p 4321:3000 -d ipv4_extractor
 ```
 
