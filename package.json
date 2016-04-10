@@ -1,0 +1,15 @@
+{
+  "name": "IPv4Extractor",
+  "version": "0.1.0",
+  "description": "Express.js app that extracts IPv4 addresses from text using rgular expression matching.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "optimist": "^0.6.1"
+  }
+}
