@@ -1,9 +1,10 @@
 IPv4_Extractor
 ==============
 
-This express.js app provides a simple REST endpoint to extract IPv4 values from text using regular expression (regex) matching.
-
-Bring it to life using <path to app>$ node server.js --serverPort=3000
+This express.js app provides a simple REST endpoint to extract IPv4 values from text using regular expression (regex) matching.  Bring it to life using:
+```shell
+ <path to app>$ node server.js --serverPort=3000
+```
 
 API Guide
 =========
