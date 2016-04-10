@@ -11,20 +11,23 @@ API Guide
 /metadata
 ---------
 The metadata endpoint accepts a GET request and returns a JSON description of the service:
+```json
   {
     "name" : "IPv4_Extractor.js" ,
     "version" : "A.A.A"
   }
+```
 
 /ip4
 -----
 
 The ip4 endpoint accepts JSON where text content is provided in the text field: { text : "Text to be processed goes here" } in a POST request.  Regex is run to extract IPv4 values, and results returned as JSON in the following format:
+```json
   {
     "ip4Addresses" : [ "ip1" , ... , "ip_n" ] ,
      "serviceID" : "IPv4_Extractor.js_A.A.A"
   }
-
+```
 
 Project guide
 =============
