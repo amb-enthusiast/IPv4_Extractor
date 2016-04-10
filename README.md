@@ -25,7 +25,7 @@ The hostname:portNumber/ip4 endpoint accepts JSON where text content is provided
 ```json
   {
     "someKey" : "someValue" ,
-    text : "Text content that you want to be processed goes here" ,
+    "text" : "Text content that you want to be processed goes here" ,
     "someOtherKey" : "someOtherValue"
   }
 ```
