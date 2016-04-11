@@ -72,3 +72,12 @@ To interact with the container on Mac OS X, remember that you need to interact w
 
 The testData/testContainerPost.sh script has an example.
 
+Export the container
+--------------------
+use docker ps to get the containerID, then
+```
+docker export --output="ipv4_extractor.tar" containerID
+```
+which creates a tar of the container in the current directory.
+
+
