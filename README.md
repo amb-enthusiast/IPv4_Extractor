@@ -60,7 +60,7 @@ Build the image
 The Dockerfile pulls from the offical node image, creates a directory for the app, copies the app to that directory and then runs the .
 To build the image, I used:
 ```shell
-    <path to app>$ docker build -t node-ipv4_extractor .
+    <path to app>$ docker build -t ipv4_extractor .
 ```
 Run container
 -------------
