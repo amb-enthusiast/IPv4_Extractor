@@ -70,7 +70,7 @@ To run the image in a container, I used:
 ```
 This maps the container app port of 3000 to the port 8080 on the host.
 
-Watch out for a Mac OS gotcha - to interact with the container on Mac OS X, remember that you need to interact with teh VM that docker uses to provide - not Mac localhost (doh!)
+Watch out for a Mac OS gotcha - to interact with the container on Mac OS X, remember that you need to interact with the VM docker uses to work - not Mac localhost (doh!)
 ```shell
     curl "http://$(docker-machine ip default):8080/metadata"
 ```
