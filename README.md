@@ -63,6 +63,12 @@ To build the image, I used:
 
 To run the image, I used:
 ```shell
-    docker run -p 4321:3000 -d ipv4_extractor
+    docker run -p 8080:3000 -d ipv4_extractor
 ```
+To interact with the container on Mac OS X, remember that you need to interact with teh VM that docker uses to provide - not Mac localhost (doh!)
+```shell
+    curl "http://$(docker-machine ip default):8080/metadata"
+```
+
+The testData/testContainerPost.sh script has an example.
 
