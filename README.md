@@ -55,17 +55,22 @@ Dockerisation
 =============
 What better than containerising the app and building a Docker image, and exporting it to a tar?
 
+Build the image
+---------------
 The Dockerfile pulls from the offical node image, creates a directory for the app, copies the app to that directory and then runs the .
 To build the image, I used:
 ```shell
     <path to app>$ docker build -t node-ipv4_extractor .
 ```
-
-To run the image, I used:
+Run container
+-------------
+To run the image in a container, I used:
 ```shell
     docker run -p 8080:3000 -d ipv4_extractor
 ```
-To interact with the container on Mac OS X, remember that you need to interact with teh VM that docker uses to provide - not Mac localhost (doh!)
+This maps the container app port of 3000 to the port 8080 on the host.
+
+Watch out for a Mac OS gotcha - to interact with the container on Mac OS X, remember that you need to interact with teh VM that docker uses to provide - not Mac localhost (doh!)
 ```shell
     curl "http://$(docker-machine ip default):8080/metadata"
 ```
