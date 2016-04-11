@@ -85,4 +85,50 @@ docker export --output="ipv4_extractor.tar" containerID
 ```
 which creates a tar of the container in the current directory.
 
+IBM BlueMix
+===========
+Here is what was done to deploy the image to IBM BlueMix:
+Setup IBM Containers
+--------------------
+Follow the instructions here:
+    
+    https://console.eu-gb.bluemix.net/docs/containers/container_cli_cfic.html
+
+To get set up with the tools & credentials required for your BlueMix account.
+
+```shell
+    $ cf login
+```
+
+```shell
+  $ cf if login
+```
+
+Prep image for deployment
+-------------------------
+BlueMix tells us to prep the 
+````shell
+    $ docker tag b9af5f7b52ec registry.eu-gb.bluemix.net/ip4_extractor/ipv4_extractor:latest
+````
+
+Push to BlueMix registry
+------------------------
+Now, we should be able to push the image to the registry:
+```shell
+    $ docker tag ipv4_extractor registry.eu-gb.bluemix.net/ip4_extractor/ipv4_extractor:latest
+```
+
+Run as container on BlueMix
+---------------------------
+From command line:
+```shell
+    $ cf ic run --name ipv4_extractor registry.eu-gb.bluemix.net/ip4_extractor/ipv4_extractor:latest
+```
+
+Note that we will need to give the app a public IP addres... try
+```shell
+    $ cf ic ip or cf ic bind ip - get a public IP address, rather than on the provate cloud
+```
+
+
 
