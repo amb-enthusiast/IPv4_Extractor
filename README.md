@@ -127,7 +127,7 @@ From command line:
 I used the BlueMix container dashboard to deploy the container and bind to a public IP address on port 3000.
 
 The container is running (as per 13/04/16) and lives @:
-   134.168.43.128:3000/ipv4
+   134.168.43.128:3000/ip4
    134.168.43.128:3000/metadata
 
 Try the ./testData/testBlueMixPost.sh script to see the container in action!
