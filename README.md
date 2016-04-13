@@ -101,7 +101,7 @@ To get set up with the tools & credentials required for your BlueMix account.
 ```
 
 ```shell
-  $ cf if login
+  $ cf ic login
 ```
 
 Prep image for deployment
@@ -124,11 +124,12 @@ From command line:
 ```shell
     $ cf ic run --name ipv4_extractor registry.eu-gb.bluemix.net/ip4_extractor/ipv4_extractor:latest
 ```
+I used the BlueMix container dashboard to deploy the container and bind to a public IP address on port 3000.
 
-Note that we will need to give the app a public IP addres... try
-```shell
-    $ cf ic ip or cf ic bind ip - get a public IP address, rather than on the provate cloud
-```
+The container is running (as per 13/04/16) and lives @:
+   134.168.43.128:3000/ipv4
+   134.168.43.128:3000/metadata
 
+Try the ./testData/testBlueMixPost.sh script to see the container in action!
 
 
